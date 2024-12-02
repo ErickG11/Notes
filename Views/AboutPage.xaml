@@ -7,16 +7,27 @@
         <models:About />
     </ContentPage.BindingContext>
     <VerticalStackLayout Spacing="10" Margin="10">
-        <HorizontalStackLayout Spacing="10">
-            <Image Source="dotnet_bot.png"
-                   SemanticProperties.Description="The dot net bot waving hello!"
-                   HeightRequest="64" />
-            <Label FontSize="22" FontAttributes="Bold" Text="{Binding Title}" VerticalOptions="End" />
-            <Label FontSize="22" Text="{Binding Version}" VerticalOptions="End" />
-        </HorizontalStackLayout>
+        <HorizontalStackLayout Spacing="15" HorizontalOptions="Center">
 
-        <Label Text="{Binding Message}" />
-        <Button Text="Learn more..." Clicked="LearnMore_Clicked" />
+            <Image Source="descarga.jpeg"
+                SemanticProperties.Description="campeon mundial"
+                HeightRequest="300"
+                WidthRequest="300" />
+            
+        </HorizontalStackLayout>
+        
+        <Label Text="Erick Granda"
+            FontSize="24"
+            FontAttributes="Bold"
+            HorizontalOptions="Center" />
+
+
+        <Label Text="Soy Erick Granda y tengo 21 años de edad, mis pasatiempos son el basketball y el gimnasio, tambien me gusta programar y todo el mundo de las computadoras, quiero llegar a ser el mejor en mi trabajo y aprende mucho sobre desarrollo web"
+            FontSize="16"
+            LineHeight="1.5"
+            HorizontalTextAlignment="Center" />
+
+
     </VerticalStackLayout>
 
 </ContentPage>
