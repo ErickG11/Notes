@@ -2,11 +2,11 @@
 
 namespace Notes.Models;
 
-internal class AllNotes
+internal class EGAllNotes
 {
-    public ObservableCollection<Note> Notes { get; set; } = new ObservableCollection<Note>();
+    public ObservableCollection<EGNote> Notes { get; set; } = new ObservableCollection<EGNote>();
 
-    public AllNotes() =>
+    public EGAllNotes() =>
         LoadNotes();
 
     public void LoadNotes()
@@ -17,13 +17,13 @@ internal class AllNotes
         string appDataPath = FileSystem.AppDataDirectory;
 
         // Use Linq extensions to load the *.notes.txt files.
-        IEnumerable<Note> notes = Directory
+        IEnumerable<EGNote> notes = Directory
 
                                     // Select the file names from the directory
                                     .EnumerateFiles(appDataPath, "*.notes.txt")
 
                                     // Each file name is used to create a new Note
-                                    .Select(filename => new Note()
+                                    .Select(filename => new EGNote()
                                     {
                                         Filename = filename,
                                         Text = File.ReadAllText(filename),
@@ -34,7 +34,7 @@ internal class AllNotes
                                     .OrderBy(note => note.Date);
 
         // Add each note into the ObservableCollection
-        foreach (Note note in notes)
+        foreach (EGNote note in notes)
             Notes.Add(note);
     }
 }
